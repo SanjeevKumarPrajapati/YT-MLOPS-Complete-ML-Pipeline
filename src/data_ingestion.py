@@ -79,7 +79,7 @@ def save_data(train_data: pd.DataFrame, test_data: pd.DataFrame, data_path: str)
     """Save the train and test datasets."""
     try:
         raw_data_path = os.path.join(data_path, 'raw')
-        os.makedirs(raw_data_path, exist_ok=True)
+        os.makedirs(raw_data_path, exist_ok=False)
         train_data.to_csv(os.path.join(raw_data_path, "train.csv"), index=False)
         test_data.to_csv(os.path.join(raw_data_path, "test.csv"), index=False)
         logger.debug('Train and test data saved to %s', raw_data_path)
